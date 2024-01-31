@@ -5,6 +5,7 @@ class Program
         Menu menu = new();
         Journal journal = new();
         bool run = true;
+        bool saved = true;
         string prompt;
         string response;
 
@@ -13,10 +14,14 @@ class Program
             switch (menu.Ask())
             {
                 case 1: // write
-                    prompt = menu.RandomPrompt();
+                    prompt = Entry.RandomPrompt();
                     Console.Write($"{prompt}\n> ");
                     response = Console.ReadLine();
-                    if (response != "") journal.Add(new Entry(prompt, response));
+                    if (response != "")
+                    {
+                        journal.Add(new Entry(prompt, response));
+                        saved = false;
+                    }
                     break;
 
                 case 2: // display
@@ -33,9 +38,15 @@ class Program
                 case 4: // save
                     Console.Write("Enter file name > ");
                     journal.Save(Console.ReadLine());
+                    saved = true;
                     break;
 
                 case 5: // quit
+                    if (!saved)
+                    {
+                        Console.Write("Changes not saved. Exit anyway? [Y/n] > ");
+                        if (Console.ReadLine().ToLower() == "n") break;
+                    }
                     run = false;
                     break;
 
