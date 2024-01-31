@@ -1,5 +1,3 @@
-using System;
-
 class Program
 {
     static void Main(string[] args)
@@ -10,7 +8,7 @@ class Program
         string prompt;
         string response;
 
-        do
+        while(run)
         {
             switch (menu.Ask())
             {
@@ -18,25 +16,32 @@ class Program
                     prompt = menu.RandomPrompt();
                     Console.Write($"{prompt}\n> ");
                     response = Console.ReadLine();
-                    journal._entries.Add(new Entry(prompt, response));
+                    if (response != "") journal.Add(new Entry(prompt, response));
                     break;
+
                 case 2: // display
                     journal.Display();
+                    Console.Write("Press enter to continue > ");
+                    Console.ReadLine();
                     break;
+
                 case 3: // load
-                    Console.Write("Enter file path > ");
+                    Console.Write("Enter file name > ");
                     journal.Load(Console.ReadLine());
                     break;
+
                 case 4: // save
-                    Console.Write("Enter file path > ");
+                    Console.Write("Enter file name > ");
                     journal.Save(Console.ReadLine());
                     break;
+
                 case 5: // quit
                     run = false;
                     break;
+
                 default:
                     break;
             }
-        } while (run);
+        }
     }
 }
