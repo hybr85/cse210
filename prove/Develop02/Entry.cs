@@ -10,6 +10,7 @@ public class Entry
     public static string RandomPrompt(){
         return promptChoices[generator.Next(0,promptChoices.Length)];
     }
+    
     public Entry(string line)
     {
         string[] split = line.Split("~|");
