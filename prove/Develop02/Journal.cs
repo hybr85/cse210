@@ -8,11 +8,6 @@ public class Journal
         entries.Add(entry);
     }
 
-    public int NumEntries()
-    {
-        return entries.Count;
-    }
-
     public void Display()
     {
         Console.WriteLine($"Entries: {entries.Count}\n");

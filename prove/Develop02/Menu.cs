@@ -1,8 +1,8 @@
 public class Menu
 {
-    readonly string options = "1. Write\n2. Display\n3. Load\n4. Save\n5. Quit";
+    readonly static string options = "1. Write\n2. Display\n3. Load\n4. Save\n5. Quit";
 
-    public int Ask()
+    public static int Ask()
     {
         Console.Clear();
         Console.Write($"{options}\nEnter choice > ");
