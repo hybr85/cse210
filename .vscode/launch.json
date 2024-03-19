@@ -190,7 +190,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build-final-FinalProject",
-            "program": "${workspaceFolder}/final/FinalProject/bin/Debug/net7.0/FinalProject.dll",
+            "program": "${workspaceFolder}/final/FinalProject/bin/Debug/net7.0-windows/FinalProject.dll",
             "args": [],
             "cwd": "${workspaceFolder}/final/FinalProject",
             "console": "integratedTerminal",
