@@ -39,14 +39,5 @@ public class Game1 : Game
         base.Update(gameTime);
     }
 
-    protected override void Draw(GameTime gameTime)
-    {
-        GraphicsDevice.Clear(Color.CornflowerBlue);
 
-        // TODO: Add your drawing code here
-        spriteBatch.Begin(samplerState: SamplerState.PointClamp);
-        spriteBatch.Draw(tex, new Rectangle(new Point(0,0), new Point(385,175)), null, Color.White);
-        spriteBatch.End();
-        base.Draw(gameTime);
-    }
 }
