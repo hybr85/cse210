@@ -1,7 +1,7 @@
 using System.Numerics;
 using Microsoft.Xna.Framework.Graphics;
 
-abstract class Car {
+class Car {
     private string make;
     private string model;
     private int hp;
@@ -9,5 +9,7 @@ abstract class Car {
     int gears;
     string color;
 
-    abstract public void Display(SpriteBatch spriteBatch, Texture2D ballTexture);
+    public void Display(SpriteBatch spriteBatch, Texture2D tex){}
+
+    public Car(){}
 }
